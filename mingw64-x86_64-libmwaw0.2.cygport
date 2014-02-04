@@ -1,0 +1,22 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libmwaw0.2"
+VERSION=0.2.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Mac Classic text document filter library for Win64 toolchain"
+DESCRIPTION="Libmwaw is a library providing ability to interpret and import
+pre-OSX Mac text documents into various applications."
+HOMEPAGE="http://sourceforge.net/projects/libmwaw/"
+SRC_URI="http://dev-www.libreoffice.org/src/libmwaw-${VERSION}.tar.bz2"
+SRC_DIR="libmwaw-${VERSION}"
+
+CYGCONF_ARGS="--without-docs"
+
+src_install() {
+	cd ${B}
+	cyginstall bin_PROGRAMS=
+}
+
+KEEP_LA_FILES="none"
